@@ -134,5 +134,9 @@
   },
   "resolutions": {
     "react-is": "npm:react-is"
-  }
+  },
+  "dependencies": {
+    "react-is": "npm:react-is"
+  },
+  "version": "0.0.0"
 }
