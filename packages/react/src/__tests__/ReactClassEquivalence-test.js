@@ -28,10 +28,11 @@ describe('ReactClassEquivalence', () => {
 function runJest(testFile) {
   const cwd = process.cwd();
   const extension = process.platform === 'win32' ? '.cmd' : '';
+  const rootDir = process.platform === 'win32' ? `${cwd}` : '<rootDir>';
   const command = process.env.npm_lifecycle_event;
   const defaultReporter = '--reporters=default';
   const equivalenceReporter =
-    '--reporters=<rootDir>/scripts/jest/spec-equivalence-reporter/equivalenceReporter.js';
+    `--reporters=${rootDir}/scripts/jest/spec-equivalence-reporter/equivalenceReporter.js`;
   if (!command.startsWith('test')) {
     throw new Error(
       'Expected this test to run as a result of one of test commands.',
